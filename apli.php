@@ -50,7 +50,7 @@
     if (file_exists($program)) { 
         require $program;
     } else { 
-        echo "El fichero $nombre_fichero no existe";
+        echo "File not exit: $program";
     }
 
     if(!isset($Sess->dato['c_ajax'])) {

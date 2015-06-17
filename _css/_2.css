@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/*@import url("../_js/plugins/sticky.full.css");*/
+
+/* Elementos que queremos limpiar completamente: */
+html {font:62.5% sans-serif, tahoma; text-shadow:#000 0 0 0;/* Elimina el efecto bold en Safari */}
+ul {list-style:none; list-style-type:none;}
+
+/* Ajustes tipográficos */
+h1, h2, h3, h4, h5, h6, p, pre,
+blockquote, ul, ol, dl, address {font-weight:normal; margin:0 0 1em 0;}
+cite, em, dfn {font-style:italic;}
+sup {position:relative; bottom:0.3em; vertical-align:baseline;}
+sub {position:relative; bottom:-0.2em; vertical-align:baseline;}
+li, dd, blockquote {margin-left:1em;}
+code, kbd, samp, pre, tt, var, input[type='text'], textarea {font-size:100%; font-family:sans-serif, tahoma;}
+del {text-decoration: line-through;}
+ins, dfn {border-bottom:1px solid #ccc;}
+small, sup, sub {font-size:85%;}
+abbr, acronym {text-transform:uppercase; font-size:85%; letter-spacing:.1em; border-bottom-style:dotted; border-bottom-width:1px;}
+a abbr, a acronym {border:none;}
+sup {vertical-align:super;}
+sub {vertical-align:sub;}
+
+h1 {font-size:2em;}
+h2 {font-size:1.8em;}
+h3 {font-size:1.6em;}
+h4 {font-size:1.4em;}
+h5 {font-size:1.2em;}
+h6 {font-size:1em;}
+
+/*** LINKS: Recuerda utilizar siempre la regla del LoVe-HAte ***/
+/* Si quisieramos eliminar la línea de puntos que aparece al pulsar un enlace, aplicaríamos la siguiente propiedad: outline: 0; */
+a, a:link, a:visited, a:hover, a:active {text-decoration:none; outline:0;}
+a img {border:none; text-decoration: none;}
+
+/* Si añades un background aparecerá como fondo de la imagen, útil para imágenes de carga */
+img {border:none; text-decoration:none;}
+
+/* Formularios */
+button {cursor:pointer;}
+input:focus, select:focus, textarea:focus {background-color:transparent;}
+fieldset {border:none;}
+
+/* Clases útiles */
+.clear {clear:both;}
+.float-left {float:left;}
+.float-right {float:right;}
+
+/* Para empezar un layout centrado: */
+body {text-align:center;/* Hack para que IE6 no de problemas */}
+.wrapper {margin:0 auto; text-align:left;}
+
+
+/****************************/
+/* GENERALES              ***/
+/****************************/
+/*:focus { outline-style: none; }*/
+html, body, div, table, tr, td, ul, li, p, span, a, label, input, select, textarea, h1, h2, h3 {font-family: sans-serif, tahoma; font-size:11px; font-weight: normal; color:#666; margin:0; padding:0;}
+button {font-family: sans-serif, tahoma; padding:4px 10px; font-size:11px; color:#666;}
+button:hover {color:#333;}
+span  {font-variant: normal; color: #999;}
+label {color:#555;}
+a:link, a:active, a:visited, a:hover {color:#74af44;}
+
+input,select,textarea {background-color:#f5f5f5; color:#888; border:1px solid #bbb; padding:1px 2px 1px 3px; border-radius:2px; /*outline:0;*/}
+select {padding:0;}
+input:focus, select:focus, textarea:focus {color:#444; background-color:#fff; border-color:#54b300; outline:0;}
+input:disabled, select:disabled, textarea:disabled {background-color:transparent; color:#aaa;}
+textarea {text-align:justify; resize: none;}
+
+/*button:disabled {color:#bbb; cursor:auto;}*/
+
+.l {text-align:left;}
+.r {text-align:right;}
+.c {text-align:center;}
+.j {text-align:justify; text-justify:newspaper;}
+
+.b {font-weight:bold;}
+.i {font-style:italic;}
+
+.h {display:none;} /* Clase hide - oculta */
+
+.bt:hover {cursor:pointer;} /* Muestra el puntero (mano) al pasar por encima*/
+/****************************/
+
+a.a_bt {cursor:pointer;}
+.lkP:link, .lkP :active, .lkP:visited {color:#7eff00;}
+
+input.er, select.er, textarea.er {border-color:red;}
+
+input.field_tabla {border:1px solid; background-color:#fff; padding:0;}
+input.field_tabla:disabled {border:1px solid transparent; background-color:transparent; padding:0;}
+input.field_tabla:focus {background:white; border:1px solid #54b300;}
+
+
+#page {position:relative; width:100%; height:100%;}
+#fecha {position:relative; font-weight:bold; left:0; bottom:0; padding-bottom:5px; width:100%;
+color:#fff; font-size:10px; letter-spacing:1px;}
+
+#cabecera {position:relative; width:100%; background-color: #00a9db; overflow: hidden;}
+#cabecera div {left: 50px; top:40%; }
+#cabecera ul {list-style:none; margin:0;}
+#cabecera li {text-align:center; float:left;}
+#cabecera li div {letter-spacing:1px; color:#444; margin:0 10px; padding:5px 0;}
+#cabecera li div.separador {margin:0; padding:5px 0;}
+#cabecera a div {color: white;}
+#cabecera a.on div{font-weight:bold; padding:2px 0; border-top:3px solid #ff0066;}

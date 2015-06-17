@@ -36,7 +36,7 @@
         <!-- INI MENU -->
         <div id="menu">
             <ul id="nav">
-                <li><a href="#">GDIAT</a></li>
+                <li><a href="#"><?php echo PROGRAMA; ?></a></li>
                 <li>|</li>
                 <li>Gestión
                     <ul id="subnav">

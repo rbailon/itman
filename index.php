@@ -60,7 +60,7 @@
         $User = new USER ($_SESSION['id']);        // Cargar usuario
         $Sess = new SESSION ($_SESSION['id']); // Cargar usuario
 
-        include_once('./APLI.php');
+        include_once('./apli.php');
 
     } else {
 
@@ -89,7 +89,7 @@
         }
 
         // Pantalla de login
-        include_once ("_LOGIN.php");
+        include_once ("login.php");
 
     }
 
