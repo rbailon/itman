@@ -20,20 +20,16 @@
     INDEX.php
     ===================
     Programa principal
-
-    Version: 0.1
-    Creado: 20150218
-    Autor: rbailonf@gmail.com
-    Ultima Modificacion: 20150220
     /////////////////////////////////////////////////////////////////////////
 
 */
 
-    // COMENTAR o ELIMINAR esta linea una vez que no haga falta ver los ERRORES 
+    // COMENTAR si no haga falta ver los ERRORES 
     error_reporting(E_ALL ^ E_NOTICE); ini_set('display_errors', '1');
     // .........................................
 
 
+    // Incluir ficheros base ...................
     include_once('./_cl/class.SESSION.php');
     include_once('./_cl/class.DBPDO.php');
     include_once('./_cl/class.PERSON.php');
@@ -42,12 +38,15 @@
     include_once('./_cl/class.SMARTTAB.php');
     include_once('./_VARS&CONST.php');
     include_once('./_FUNCIONS.php');
+    // .........................................
 
 
     session_start();
-    //SESSION::error("Yeah!");
+    $Sess = new SESSION ();
 
-    // CERRAR SESSION Y BORRAR DATOS - Preparar un cierre de cesión !!!!!
+    $errLogin = '0';
+
+    // CERRAR SESSION Y BORRAR DATOS
     if (isset($_GET['out'])) {
 
         SESSION::destroy();
@@ -55,43 +54,61 @@
 
     } elseif (SESSION::authenticate()) {
 
-      
         $DB = new DBPDO();                      // Conectar a base de datos
         $User = new USER ($_SESSION['id']);        // Cargar usuario
-        $Sess = new SESSION ($_SESSION['id']); // Cargar usuario
 
         include_once('./apli.php');
 
     } else {
 
+        if (isset($_POST['life'])){
 
-        if (isset($_POST['user']) and isset($_POST['pass'])) {
+            if (isset($_POST['user']) && $_POST['user']) {
 
-            // Conectar a la base de datos y comprobar
-            // los datos de login (usuario y clave)
-            $DB = new DBPDO();
-            $row = $DB->fetch (" SELECT * FROM tb_personas WHERE usuario = '".$_POST['user']."' AND pass = password('".$_POST['pass']."') ");
+                // Conectar a la base de datos y comprobar
+                // los datos de login (usuario y clave)
+                $DB = new DBPDO();
+                $row = $DB->fetch (" SELECT * FROM tb_personas WHERE usuario = '".$_POST['user']."' ");
 
-            if($row) {
+                if($row) {
 
-                // DATOS DE LA SESSION INICIADA
-                $_SESSION['id']              = $row['cod_persona'];
-                $_SESSION['user']            = $row['usuario'];
-                $_SESSION['userAgent']       = $_SERVER['HTTP_USER_AGENT'];
-                $_SESSION['IPaddress']       = $_SERVER['REMOTE_ADDR'];
-                $_SESSION['LastActivity']    = $_SERVER['REQUEST_TIME'];
-                //$_SESSION[SKey]          = uniqid(mt_rand(), true);
+                    if (isset($_POST['pass'])) {
+
+                        $row = $DB->fetch (" SELECT * FROM tb_personas WHERE usuario = '".$_POST['user']."' AND pass = password('".$_POST['pass']."') ");
+
+                        if($row) {
+
+                            // DATOS DE LA SESSION INICIADA
+                            $_SESSION['id']             = $row['cod_persona'];
+                            $_SESSION['user']           = $row['usuario'];
+                            $_SESSION['userAgent']      = $_SERVER['HTTP_USER_AGENT'];
+                            $_SESSION['IPaddress']      = $_SERVER['REMOTE_ADDR'];
+                            $_SESSION['LastActivity']   = $_SERVER['REQUEST_TIME'];
+                            
+                            //$_SESSION[SKey]          = uniqid(mt_rand(), true);
 
 
-                header("Location:?ch=es001"); // Recarga index.php
-
+                            header("Location:?ch=es001"); // Recarga index.php
+                        } else {
+                            $errLogin = "Contraseña incorrecta";
+                        }                    
+                    }
+                } else {
+                    $errLogin = "El usuario no existe";
+                }
+            } else {
+                $errLogin = "Debe introducir sus datos de identificación";
             }
         }
+
+
+        //SESSION::error("ERROR: No existe centros en tb_centros ");
 
         // Pantalla de login
         include_once ("login.php");
 
     }
+
 
     //Desconectamos la base de datos
     if (isset($DB)) { $DB = null; }

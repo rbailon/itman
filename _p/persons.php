@@ -17,15 +17,10 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	/////////////////////////////////////////////////////////////////////////
+	
 	PERSONS.php
 	===================
 	Tratamiento de los datos de personas
-
-	Version: 0.1
-	Creado: 20150225
-	Autor: rbailonf@gmail.com
-	Ultima Modificacion: 20150225
-	/////////////////////////////////////////////////////////////////////////
 
 */
 

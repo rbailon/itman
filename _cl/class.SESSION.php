@@ -22,12 +22,6 @@
     Para controlar el acceso al sistema y las variables de entorno de 
     funcionamiento del programa.
 
-    Version: 0.1
-    Creado: 20150218
-    Autor: rbailonf@gmail.com
-    Ultima Modificacion: 20150220
-    /////////////////////////////////////////////////////////////////////////
-
 */
 
 
@@ -36,9 +30,8 @@ class SESSION
 {
     private static $debug = 0;      // [0]NO muestra información [1]Muestra información
     private static $time = 3600;    // Tiempo sin interactuar 3600seg = 1h
-    public $lg = '';                // Laguage / idioma
     public $c_oper = 0;             // Codigo de operación
-    public $dato = array();         // Array de datos del objeto SESSION
+    public $data = array();         // Array de datos del objeto SESSION
 
 
     public function __construct() {
@@ -46,19 +39,18 @@ class SESSION
         // Si existe el chorizo de la URL, se desgrana
         if (isset($_GET['ch'])) {
 
-            $this->lg       = substr($_GET['ch'], 0,2);
-            $this->c_oper   = substr($_GET['ch'], 2,4);
+            $this->c_oper   = substr($_GET['ch'], 0,2);
 
         } else {
 
             // Valores por defecto
-            $this->lg       = "es";
             $this->c_oper   = "001";
 
         }
     }
 
     //**********************************************************************
+    // Comprobar si se ha iniciado la sessión
     public static function authenticate() {
         
         if (self::$debug) {
@@ -72,7 +64,7 @@ class SESSION
 
                 $t = time() - $_SESSION['LastActivity'];
                 if ($t > self::$time) {
-
+                    // Si se ha superado el limite de tiempo sin trabajar, se cierra la sessión
                     self::destroy();
 
                 } else $_SESSION['LastActivity'] = time();
@@ -84,17 +76,22 @@ class SESSION
 
     }
 
+    //**********************************************************************
+    // Cerrar la sesion activa
     public static function destroy() {
 
+        $user = $_SESSION['user'];
         session_unset();
         session_destroy();
         session_start();
         session_regenerate_id(true);
         
-        trigger_error("Sesión cerrada, pendiente de un mensaje", E_USER_NOTICE);
+        trigger_error("Sesion $user cerrada ", E_USER_NOTICE);
 
     }
 
+    //**********************************************************************
+    // Enviar el error al registro de php
     public static function error($error = null) {
 
         $caller = debug_backtrace();

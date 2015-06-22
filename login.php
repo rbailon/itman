@@ -1,6 +1,3 @@
-<?php
-    
-?>
 
 <HTML>
 <HEAD>
@@ -16,8 +13,27 @@
 
 </HEAD>
 
+<?php
+    
+?>
+<script src="_js/_.js"></script>
+<script>
+    $(document).ready(function(){
+        <?php 
+            if ($errLogin) {
+                echo '
+                    $("#er_login").toggle().html("'.$errLogin.'");
+                    $("#user").focus();
+                ';
+            }
 
-<BODY onload="document.forms.login.user.focus()" id="idlogin">
+        ?>
+
+    });
+</script>
+
+
+<BODY>
 <CENTER>
 <div class=xx>
 
@@ -33,8 +49,9 @@
                     <li><label>Usuario:</label><input type="text" id="user" name="user" size="30" value=""></li>
                     <li>&nbsp;</li>
                     <li><label>Contraseña:</label><input type="password" id="pass" name="pass" size="30" value=""></li>
+                    <li><input type="hidden" name="life" value="1"></li>                    
                     <li>&nbsp;</li>
-                    <li><label></label><button id="submit" type="submit"><span>Entrar</span></button></li>
+                    <li><label></label><button id="submit" type="submit" class="btn"><span>Entrar</span></button></li>
                 </ul>
             </form>
             </fieldset>
