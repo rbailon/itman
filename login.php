@@ -24,7 +24,7 @@
                 echo '
                     $("#user").val("'.$_POST["user"].'");
                     $("#pass").val("'.$_POST["pass"].'");
-                    $("#er_login").toggle().html("'.$errLogin.'");
+                    $("#er_login").html("'.$errLogin.'").show("slow");
                 ';
             }
 
