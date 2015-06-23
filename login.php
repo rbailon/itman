@@ -22,12 +22,14 @@
         <?php 
             if ($errLogin) {
                 echo '
+                    $("#user").val("'.$_POST["user"].'");
+                    $("#pass").val("'.$_POST["pass"].'");
                     $("#er_login").toggle().html("'.$errLogin.'");
-                    $("#user").focus();
                 ';
             }
 
         ?>
+        $("#user").focus();
 
     });
 </script>
