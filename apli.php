@@ -21,21 +21,12 @@
     ===================
     Programa principal
 
-    Version: 0.1
-    Creado: 20150220
-    Autor: rbailonf@gmail.com
-    Ultima Modificacion: 20150220
-    /////////////////////////////////////////////////////////////////////////
-
 */
-    require "./_esq0.php";
-    require "./_MENU.php";
-    require "./_esq1.php";
-
     $sal = '';
+    
+    require "./_HEAD.php";
+    require "./_MENU.php";
 
-/*  if($oUser->permisos[PU_CONS_PERSONA]) */
-   
     switch($Sess->c_oper) {
 
         case "001": $program = "./_p/resumen.php"; break;
@@ -45,26 +36,24 @@
         case "006": $program = "./_p/tickets.php"; break;
 
         default:
-    }//*/
+    }
 
     if (file_exists($program)) { 
         require $program;
     } else { 
-        echo "File not exit: $program";
+        $sal .= "File not exit: $program";
     }
-
+/*
     if(!isset($Sess->dato['c_ajax'])) {
     } else
+*/
+
+    require "./_FOOD.php";
+
     echo $sal;
 
     //$sal = eregi_replace("[\n|\r|\n\r]", ' ', $sal);
-    
-
-
-
-    require "./_esq9.php";
-
-
+ 
 
 
 

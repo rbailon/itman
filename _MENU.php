@@ -30,8 +30,7 @@
 */
 
 
-    
-?>
+    $sal .= '
 
         <!-- INI MENU -->
         <div id="menu">
@@ -40,10 +39,10 @@
                 <li>|</li>
                 <li>Gestión
                     <ul id="subnav">
-                        <li><a href="?ch=es002">Personas</a></li>
-                        <li><a href="?ch=es003">Emails</a></li>
-                        <li><a href="?ch=es004">Ordenadores</a></li>
-                        <li><a href="?ch=es005">Impresoras</a></li>
+                        <li><a href="?ch=002">Personas</a></li>
+                        <li><a href="?ch=003">Emails</a></li>
+                        <li><a href="?ch=004">Ordenadores</a></li>
+                        <li><a href="?ch=005">Impresoras</a></li>
                     </ul>
                 </li>
                 <li>|</li>
@@ -68,3 +67,6 @@
             </ul>
         </div>
         <!-- FIN MENU -->
+        
+    ';
+?>

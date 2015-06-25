@@ -11,14 +11,12 @@
    var itman = (function(){
  
       var core = {
-          c_lg:'',c_user:'',c_mod:'',c_sec:''
+          c_mod:'',c_sec:''
 
          //#############################################################################
          ,inChorizo: function(ch)
          {// Separa
             var ch;
-            this.c_lg = ch.substr(0,2);
-            this.c_user = parseInt(ch.substr(2,3));
             this.c_mod = ch.substr(5,3);
             this.c_sec = ch.substr(8,3);
          }
@@ -30,9 +28,9 @@
          },
       
          // -------------------------------------------------------------------------------------------------------
-         login: function()
+         ini: function()
          {
-
+            
          }
             
       }; //#############################################################################

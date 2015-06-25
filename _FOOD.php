@@ -17,28 +17,18 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     /////////////////////////////////////////////////////////////////////////
-    _ESQ9.php
+    _FOOD.php
     ===================
-    Esqueleto 9
-
-    Version: 0.1
-    Creado: 20150222
-    Autor: rbailonf@gmail.com
-    Ultima Modificacion: 20150222
-    /////////////////////////////////////////////////////////////////////////
+    Pie de pagina
 
 */
 
+    $sal .= '
+        </div>
+        <!-- FIN PAGINA -->
+        
+        </BODY>
+
+    </HTML>
+    ';
 ?>
-
-    </div>
-    <!-- FIN PAGINA -->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="_js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    
-    </BODY>
-
-</HTML>

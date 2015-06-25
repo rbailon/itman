@@ -88,7 +88,7 @@
                             //$_SESSION[SKey]          = uniqid(mt_rand(), true);
 
 
-                            header("Location:?ch=es001"); // Recarga index.php
+                            header("Location:?ch=001"); // Recarga index.php
                         } else {
                             $errLogin = "Contraseña incorrecta";
                         }                    

@@ -27,6 +27,7 @@ var persons = function() {
       // -------------------------------------------------------------------------------------------------------
       x: function()
       {
+         
          $("#persons tbody tr").each(function(index){
             
             // COMO SACAR LA INFORMACION DE UN OBJETO POR CONSOLA

@@ -75,12 +75,13 @@
 
 		}
 
-		echo "
+		$sal .= "
 
 <script src=\"_p/persons.js\"></script>
 <script>
 	$(document).ready(function(){ 		
 		persons.x();
+		$(\"#persons\").DataTable();
 		$(\"#buscar\").focus();
 	});
 		
@@ -99,11 +100,9 @@
 			
 			</div>
 
-		";
-
-		echo $tb1->pintar();
-
-		echo "</div>";
+		"
+		.$tb1->pintar()
+		."</div>";
 
 
 	}
