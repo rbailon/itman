@@ -36,9 +36,9 @@ class SMARTTAB {
 
 
 	//********************************************
-	public function __construct($id = null, $class = "table") {
+	public function __construct($id = null, $class = "table", $attrs = null) {
 	
-		$this->s = "<table id=\"$id\" class=\"$class\" >";
+		$this->s = "<table id=\"$id\" class=\"$class\" $attrs >";
 	}
 
 

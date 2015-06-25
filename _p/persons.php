@@ -25,7 +25,7 @@
 */
 
 
-	$tb1 = new SMARTTAB ('persons','table table-hover table-condensed ');
+	$tb1 = new SMARTTAB ('persons','table table-hover table-condensed', 'data-order=\'[[ 1, "asc" ]]\' data-page-length="25"');
 
 	$tb1->head('', 'c b tHead', '2%', 'ID');
 	$tb1->head('', 'l b tHead', '', 'NOMBRE');
@@ -45,7 +45,7 @@
 	$listCentros		= CENTER::getList();
 
 
-	$rows = $DB->fetchAll (" SELECT * FROM tb_personas ORDER BY apellido1, apellido2, nombre LIMIT 0,25 ");
+	$rows = $DB->fetchAll (" SELECT * FROM tb_personas ORDER BY apellido1, apellido2, nombre ");
 
 
 	//showX($rows);
@@ -75,34 +75,43 @@
 
 		}
 
-		$sal .= "
+		$sal .= '
 
-<script src=\"_p/persons.js\"></script>
+<script src="_p/persons.js"></script>
 <script>
 	$(document).ready(function(){ 		
 		persons.x();
-		$(\"#persons\").DataTable();
-		$(\"#buscar\").focus();
+		$("#persons").DataTable({
+			"lengthChange": false
+			,"language": {
+    			"search": "Buscar:"
+    		}
+    		,"initComplete": function( settings, json ) {
+    		    $("div.dataTables_filter input").attr({"placeholder":"buscar..."});
+    		    $("div.dataTables_filter input").focus();
+    		}
+		});
+		
 	});
 		
 </script>
 
-		<div class=\"panel panel-default\">
+		<div class="panel panel-default">
 
-			<div class=\"panel-heading\">PERSONAS</div>
-			<div class=\"panel-body\">
+			<div class="panel-heading">PERSONAS</div>
+			<div class="panel-body">
 			
-				<div class=\"r\">
+				<div class="r">
 					<FORM>
-						<input id=\"buscar\" placeholder=\"buscar...\" size=\"15\">
+						<input id="buscar" placeholder="buscar..." size="15">
 					</FORM>
 				</div>
 			
 			</div>
 
-		"
+		'
 		.$tb1->pintar()
-		."</div>";
+		.'</div>';
 
 
 	}
