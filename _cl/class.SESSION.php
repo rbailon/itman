@@ -39,7 +39,7 @@ class SESSION
         // Si existe el chorizo de la URL, se desgrana
         if (isset($_GET['ch'])) {
 
-            $this->c_oper   = substr($_GET['ch'], 0,2);
+            $this->c_oper   = substr($_GET['ch'], 0,3);
 
         } else {
 
