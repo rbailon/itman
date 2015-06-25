@@ -20,12 +20,6 @@
 	Clase SMARTIU
 	=======================
 	Manejo de la interfaz
-	
-	Version: 0.1
-	Creado: 20150225
-	Autor: rbailonf@gmail.com
-	Ultima Modificacion: 20150225
-	/////////////////////////////////////////////////////////////////////////
 
 */
 
