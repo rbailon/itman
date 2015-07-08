@@ -47,11 +47,12 @@ input, select {vertical-align:middle;}
 /* GENERALES              ***/
 /****************************/
 html, body, div, table, tr, td, ul, li, p, span, button, label, input, select, textarea {font-size:11px; color:#666;}
+body { text-align: center; }
 ul {list-style:none;}
 input {left:0px; margin:2px; font-size:11px; color:#888; background-color:#f5f5f5; border:1px solid #bbb; letter-spacing:1px; border-radius:2.5px; padding:4px 3px;}
 input:focus {color:#444; background-color:#fff; border-color:#9CD5FF; box-shadow: 0px 0px 2px #9CD5FF; outline:0px;}
 a {text-decoration: none;}
-
+div.cloud {position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(205,205,205,0.8); display: none;}
 
 /* CSS Login *********************************************************************/
 div.xx {
@@ -159,13 +160,15 @@ div.xx {
 
 
 
-
 /* CSS del menu *********************************************************************/
-div#menu {padding: 10px;}
+div#menu {
+    padding: 10px;
+    height: 30px;
+}
 ul#nav li {float:left; padding: 0 5px; letter-spacing: 5px; color: #333; }
 ul#nav li a {}
 ul#nav li a:hover {color: #0033cc; }
-ul#nav li a:active {background-color: #0033cc; } /* ?????????????? */
+ul#nav li a:active {background-color: #0033cc; } 
 
 ul#subnav {display: none; background-color: #ccc; border: 1px solid #999; border-radius: 2px;}
 ul#subnav li {float: none;}
@@ -174,13 +177,167 @@ ul#subnav li a {}
 ul#nav li:hover ul#subnav {display: block; position: absolute; padding-top: 5px;}
 ul#nav li:hover ul#subnav li a {display: block; letter-spacing: 3px; padding: 3px 0;}
 ul#nav li:hover ul#subnav li a:before {content: "*";}
-/************************************************************************************/
+
+/*************************************************************************************************/
 
 
-div#page {padding: 40px;}
+/* CSS del Panel *********************************************************************************/
+div.panel {margin: 20px;}
+input.dataTables_filter {
+    font-weight: normal;
+}
 
 .b {font-weight: bold;}
 .j {text-align: justify;}
 .l {text-align: left;}
 .r {text-align: right;}
 .c {text-align: center;}
+.i {font-style: italic;}
+.o {font-style: oblique;}
+
+
+div.foo {
+    position: absolute;
+    background-color: rgba(180,100,100,1);
+    border-radius: 3px;
+    padding: 8px 8px;
+}
+div.foo span {
+    color:black;
+}
+
+
+/* CSS Page **************************************************************************************/
+div#page {
+    position: relative;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+
+
+
+
+/* CSS del menu *********************************************************************/
+div.nav {
+    /*centering*/
+    position: absolute;
+    top:0;
+    cursor: pointer;
+    display: inline-block;
+    /*box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);*/
+    overflow: hidden;
+    border-radius: 5px;
+    /*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+    counter-reset: flag; 
+    padding: 0;
+    margin-bottom: 0;
+}
+.nav ul li {
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 36px;
+    color: white;
+    /*need more margin on the left of links to accomodate the numbers*/
+    padding: 0 10px 0 60px;
+    background: rgba(102,102,102,0.5);
+    background: linear-gradient(rgba(102,102,102,1), rgba(51,51,51,1));
+    position: relative;
+}
+.nav ul li div { 
+    color: white;
+}
+.nav ul li:first-child {
+    padding-left: 46px;
+    border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.nav ul li:first-child:before {
+    left: 14px;
+}
+.nav ul li:last-child {
+    border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+    padding-right: 20px;
+}
+/*hover/active styles*/
+.nav ul li.active, .nav ul li:hover{
+    background: #333;
+    background: linear-gradient(#333, #000);
+}
+.nav ul li.active:after, .nav ul li:hover:after {
+    background: #333;
+    background: linear-gradient(135deg, #333, #000);
+}
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.nav ul li:after {
+    content: '';
+    position: absolute;
+    top: 0; 
+    right: -18px; /*half of square's length*/
+    /*same dimension as the line-height of .breadcrumb a */
+    width: 36px; 
+    height: 36px;
+    /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+    length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+    if diagonal required = 1; length = 1/1.414 = 0.707*/
+    transform: scale(0.707) rotate(45deg);
+    /*we need to prevent the arrows from getting buried under the next link*/
+    z-index: 1;
+    /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+    background: #666;
+    background: linear-gradient(135deg, #666, #333);
+    /*stylish arrow design using box shadow*/
+    box-shadow: 
+        2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+        3px -3px 0 2px rgba(255, 255, 255, 0.1);
+    /*
+        5px - for rounded arrows and 
+        50px - to prevent hover glitches on the border created using shadows*/
+    border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.nav ul li:last-child:after {
+    content: none;
+}
+/*we will use the :before element to show numbers*/
+.nav ul li:before {
+    content: counter(flag);
+    counter-increment: flag;
+    /*some styles now*/
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px 0;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    background: #444;
+    background: linear-gradient(#444, #222);    
+    font-size: 10px;
+}
+
+
+.flat ul li, .flat ul li:after {
+    background: rgba(250,250,250,1);
+    color: black;
+    transition: all 0.5s;
+}
+.flat ul li div { 
+    color: black;
+}
+.flat ul li:before {
+    background: white;
+    box-shadow: 0 0 0 1px #ccc;
+}
+.flat ul li:hover, .flat ul li.active, 
+.flat ul li:hover:after, .flat ul li.active:after{
+    background: #9EEB62;
+}
+
+
+
+
+
+

@@ -40,7 +40,6 @@
             <meta name="description" content="" />
             <title>'.PROGRAMA.' '.VERSION.'</title>
 
-            <link rel="stylesheet" type="text/css" href="./_css/_.css" />
             <link rel="shortcut icon" href="./_img/favicon.gif" />
 
             <!-- jQuery -->
@@ -54,13 +53,21 @@
 
             <!-- ITman -->
             <script type="text/javascript" language="javascript" src="_js/_.js"></script>
+            <script type="text/javascript" language="javascript" src="_js/_menu.js"></script>
+            <link rel="stylesheet" type="text/css" href="./_css/_.css" />
 
             <script type="text/javascript" language="javascript" class="init">
-                $(document).ready(function(){ 
-                    var ch = "'.$_GET["ch"].'";
-                    $$.inChorizo(ch);
+                var globs = {};
+                globs.kn = "'.$_GET["ch"].'";
+                
+                $(document).ready(function(){
+                    $$.kerbero();
+                    $$.menu();                    
+                    $$.start();
+                    M.start();
                 });
             </script>
+            
         </HEAD>
 
         <BODY>
