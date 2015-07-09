@@ -16,18 +16,25 @@
 
             // #######################################################################################
             ,start: function() {
-                $("body").append('<div class="nav"></div>');
-                $(".nav").append('<ul></ul>');
-                $(".nav ul").append('<li><div>Gestión</div></li>');
-                $(".nav ul").append('<li class="active"><div>Incidencias</div></li>');
-                $(".nav ul").append('<li><div>Contratos</div></li>');
-                $(".nav ul").append('<li><div>Presupuesto</div></li>');
-                $(".nav ul").append('<li><div>Salir</div></li>');
+                $("body").append('<div class="nav"><ul></ul></div>');
+                $(".nav ul").append('<li class="active">'+globs.program+'</li>');
+                $(".nav ul").append('<li id="ges">Gestión</li>');
+                $(".nav ul").append('<li id="inc">Incidencias</li>');
+                $(".nav ul").append('<li id="con">Contratos</li>');
+                $(".nav ul").append('<li id="pre">Presupuesto</li>');
+                $(".nav ul").append('<li id="out">Salir</li>');
+
+                $("body").append('<div class="nav subnav"><ul></ul></div>');
+                $(".subnav ul").append('<li>Personas</li>');
+                $(".subnav ul").append('<li>Emails</li>');
+                $(".subnav ul").append('<li>Ordenadores</li>');
+                $(".subnav ul").append('<li>Impresoras</li>');
             }
 
 
             // #######################################################################################
             // Class PERSONS--------------------------------------------------------------------------
+            /*
             ,persons: {
 
                  c_mod: "002"
@@ -46,7 +53,7 @@
                     $("#persons thead tr").append("<th class=\"c b tHead\" width=5%>CENTRO</th>");
                 }
 
-            }
+            }//*/
 
         }; //#############################################################################
  

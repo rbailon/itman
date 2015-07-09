@@ -47,7 +47,6 @@ input, select {vertical-align:middle;}
 /* GENERALES              ***/
 /****************************/
 html, body, div, table, tr, td, ul, li, p, span, button, label, input, select, textarea {font-size:11px; color:#666;}
-body { text-align: center; }
 ul {list-style:none;}
 input {left:0px; margin:2px; font-size:11px; color:#888; background-color:#f5f5f5; border:1px solid #bbb; letter-spacing:1px; border-radius:2.5px; padding:4px 3px;}
 input:focus {color:#444; background-color:#fff; border-color:#9CD5FF; box-shadow: 0px 0px 2px #9CD5FF; outline:0px;}
@@ -155,11 +154,6 @@ div.xx {
 }
 
 
-
-
-
-
-
 /* CSS del menu *********************************************************************/
 div#menu {
     padding: 10px;
@@ -222,7 +216,8 @@ div#page {
 div.nav {
     /*centering*/
     position: absolute;
-    top:0;
+    top: 1px;
+    left: 1px;
     cursor: pointer;
     display: inline-block;
     /*box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);*/
@@ -233,12 +228,12 @@ div.nav {
     padding: 0;
     margin-bottom: 0;
 }
-.nav ul li {
+div.nav ul li {
     outline: none;
     display: block;
     float: left;
     font-size: 12px;
-    line-height: 36px;
+    line-height: 30px;
     color: white;
     /*need more margin on the left of links to accomodate the numbers*/
     padding: 0 10px 0 60px;
@@ -246,38 +241,38 @@ div.nav {
     background: linear-gradient(rgba(102,102,102,1), rgba(51,51,51,1));
     position: relative;
 }
-.nav ul li div { 
+div.nav ul li div { 
     color: white;
 }
-.nav ul li:first-child {
+div.nav ul li:first-child {
     padding-left: 46px;
     border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
 }
-.nav ul li:first-child:before {
+div.nav ul li:first-child:before {
     left: 14px;
 }
-.nav ul li:last-child {
+div.nav ul li:last-child {
     border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
     padding-right: 20px;
 }
 /*hover/active styles*/
-.nav ul li.active, .nav ul li:hover{
+div.nav ul li.active, div.nav ul li:hover{
     background: #333;
     background: linear-gradient(#333, #000);
 }
-.nav ul li.active:after, .nav ul li:hover:after {
+div.nav ul li.active:after, div.nav ul li:hover:after {
     background: #333;
     background: linear-gradient(135deg, #333, #000);
 }
 /*adding the arrows for the breadcrumbs using rotated pseudo elements*/
-.nav ul li:after {
+div.nav ul li:after {
     content: '';
     position: absolute;
     top: 0; 
-    right: -18px; /*half of square's length*/
+    right: -15px; /*half of square's length*/
     /*same dimension as the line-height of .breadcrumb a */
-    width: 36px; 
-    height: 36px;
+    width: 30px; 
+    height: 30px;
     /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
     length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
     if diagonal required = 1; length = 1/1.414 = 0.707*/
@@ -297,19 +292,20 @@ div.nav {
     border-radius: 0 5px 0 50px;
 }
 /*we dont need an arrow after the last link*/
-.nav ul li:last-child:after {
+div.nav ul li:last-child:after {
     content: none;
 }
 /*we will use the :before element to show numbers*/
-.nav ul li:before {
+div.nav ul li:before {
     content: counter(flag);
     counter-increment: flag;
     /*some styles now*/
+    text-align: center;
     border-radius: 100%;
     width: 20px;
     height: 20px;
     line-height: 20px;
-    margin: 8px 0;
+    margin: 5px 0;
     position: absolute;
     top: 0;
     left: 30px;
@@ -318,6 +314,10 @@ div.nav {
     font-size: 10px;
 }
 
+div.subnav {
+    position: absolute;
+    top:31px;
+}
 
 .flat ul li, .flat ul li:after {
     background: rgba(250,250,250,1);
