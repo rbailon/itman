@@ -16,25 +16,6 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-    /////////////////////////////////////////////////////////////////////////
-    _FUNCIONS.php
-    ===================
-    Funciones Generales
-
-    Version: 0.1
-    Creado: 20150218
-    Autor: rbailonf@gmail.com
-    Ultima Modificacion: 20150220
-
-    20080000 - FUNCTION outChorizo         =>
-    20080000 - FUNCTION inChorizo          =>
-    20080000 - FUNCTION usuarioValidado    =>
-    20080000 - FUNCTION datosCookie        =>
-    20080000 - FUNCTION fmto_DD_MM_AAAA    => Convertir un TIMESTAMP en formato DD-MM-AAAA
-    20150214 - FUNCTION showX (object, [bool])
-
-    /////////////////////////////////////////////////////////////////////////
-
 */
 
     //************************************************************************************
@@ -51,73 +32,55 @@
         }
     }
 
+
     //************************************************************************************
     // Ver el contenido de un array u objeto. El 2º argumento dice si terminar el programa
-    function showX($obj, $k = 0) {
-   
-        echo '<pre>'; print_r($obj); echo '</pre>';
-   
-        if (!$k) { exit(); }
-
-    }
-
-    //**********************************************************************************
-    function inChorizo(){
-        
-        $ch = $oEnt->dato['ch'];
-
-        $oEnt->dato['c_lg']     = substr($ch, 0,2);
-        //$oUser->cod_usuario     = substr($ch, 2,3);
-        $oEnt->dato['c_mod']    = substr($ch, 5,3);
-        $oEnt->dato['c_sec']    = substr($ch, 8,3);
-
-        //echo  ">>>>".$oEnt->dato['c_lg']."-".$oEnt->dato['c_mod']."-".$oEnt->dato['c_sec'];
-    }
-/*/////////////////////////////////////////////////////////////////////////////////////
-
-//**********************************************************************************
-/*function outChorizo(){
-require "./_variables.php";
-return "es"
-.str_pad($oUser->cod_usuario, 3, "0", STR_PAD_LEFT)
-.$oEnt->dato['c_mod']
-.$oEnt->dato['c_sec']
-;
-}
+    function show($obj, $k = 0) {
 
 
+      global $err;
+     	$s = '';
+
+		$s = '<pre>' . print_r($obj, true) . '</pre>';
+
+		if(!$k) {
+			echo $s;
+			exit();
+		} else {
+			$err .= ($err)?"<br>".$s:$s;
+		}
+   }
 
 
-//**********************************************************************************
-function usuarioValidado() {
-require "./_variables.php";
+   //**********************************************************************************
+	function errorHandler( $errno, $errstr, $errfile, $errline, $errcontext)
+	{
+	   global $err;
 
-$datos = datosCookie($_COOKIE, $globs['name_cookie']);
+		// errno: El primer parámetro, errno, contiene el nivel del error ocasionado, como un valor de tipo integer.
+		// errstr: El segundo parámetro, errstr, contiene el mensaje de error, como cadena.
+		// errfile: El tercer parámetro es opcional, errfile, que contiene el nombre de archivo que ocasionó el error, como cadena.
+		// errline: El cuarto parámetro es opcional, errline, que contiene el número de línea donde ocurrió el error, como valor de tipo integer.
+		// errcontext: El quinto parámetro es opcional, errcontext, el cuál es una matriz que apunta a la tabla de símbolos activa en el punto
+		// 				donde ocurrió el error. En otras palabras, errcontext contendrá una matriz con cada variable que existe en el ámbito donde el error
+		// 				fue provocado. El gestor de errores de usuario no debe modificar el contexto del error.
 
-if(!$datos['code'] || !$datos['email']){ return 0; }
-else {
-$globs['u_code']     = $datos['code'];
-$globs['u_email']    = $datos['email'];
-//echo "<br>>".$globs['u_code']." - ".$globs['u_email'];
+		//if($errno != 8)
+		switch ($errno) {
+			case 2:
+				$errno = "WARNING";
+				break;
+			case 8:
+				$errno = "NOTICE";
+				break;
 
-return 1;
-}
-}
-
-
-//**********************************************************************************
-function datosCookie($cookie, $name)
-{
-$datos = array ('code' => '');
-$dat = explode("|", $cookie[$name]);
-if($dat[0] && $dat[1]) {
-$datos['code']    = $dat[0];
-$datos['email']      = $dat[1];
-//echo "<br>>".$datos['code']." - ".$datos['email'];
-}
-return $datos;
-}
-
-//*/
+			default: break;
+		}
+		if($err) $err .= "<br>";
+		$err .= 'Type: <b>'. $errno .'</b> '. $errstr .' <b>'. $errfile .'</b> line <b>'. $errline .'</b>';
+		//"\n\n---ERRCONTEXT---\n".print_r( $errcontext, true).
+		// "\n\nBacktrace of errorHandler()\n".
+		// print_r( debug_backtrace(), true);
+	}
 
 ?>
