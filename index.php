@@ -29,7 +29,7 @@
 	include_once('./_cl/class.PERSON.php');
 	include_once('./_cl/class.DEPARTAMENT.php');
 	include_once('./_cl/class.CENTER.php');
-	//include_once('./_cl/class.MAIL.php');
+	include_once('./_cl/class.MAIL.php');
 	//include_once('./_cl/class.SMARTTAB.php');
 	include_once('./_VARS&CONST.php');
 	include_once('./_FUNCIONS.php');

@@ -16,20 +16,32 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	/////////////////////////////////////////////////////////////////////////
-	Clase DEPARTAMENT
-	=========================
-	Clase para manejor departamentos
-
-	Version: 0.1
-	Creado: 20150302
-	Autor: rbailonf@gmail.com
-	Ultima Modificacion: 20150302
-	/////////////////////////////////////////////////////////////////////////
-
 */
 
+
 	class DEPARTAMENT {
+
+
+		//********************************************
+		static function getIDs() {
+
+			global $DB;
+			$tab = [];
+
+			$rows = $DB->fetchAll (" SELECT * FROM tb_departamentos ORDER BY departamento ");
+
+			//showX($rows);
+			if(isset($rows)) {
+
+				for ($i=0; $i < count($rows); $i++) {
+
+					$tab[$rows[$i]['id']] = $rows[$i]['departamento'];
+
+				}
+
+				return $tab;
+			}
+		}
 
 		private static $list = array('' => '', 0 => '' );
 
@@ -45,7 +57,7 @@
 				foreach ($rows as $key) {
 
 					self::$list[$key['cod_departamento']] = $key['departamento'];
-					
+
 				}
 
 				return self::$list;

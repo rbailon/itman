@@ -16,46 +16,30 @@
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-	/////////////////////////////////////////////////////////////////////////
-	Clase CENTER
-	=========================
-	Clase para manejor los centros
-
-	Version: 0.1
-	Creado: 20150302
-	Autor: rbailonf@gmail.com
-	Ultima Modificacion: 20150302
-	/////////////////////////////////////////////////////////////////////////
-
 */
+
 
 	class CENTER {
 
-		private static $list = array('' => '', 0 => '' );
-
 		//********************************************
-		static function getList(){
+		static function getIDs() {
 
 			global $DB;
+			$tab = [];
 
-			$rows = $DB->fetchAll(" SELECT * FROM tb_centros "); //showArray($row);
+			$rows = $DB->fetchAll (" SELECT * FROM tb_centros ORDER BY centro ");
 
-			if ($rows) {
+			//showX($rows);
+			if(isset($rows)) {
 
-				foreach ($rows as $key) {
+				for ($i=0; $i < count($rows); $i++) {
 
-					self::$list[$key['cod_centro']] = $key['centro'];
-					
+					$tab[$rows[$i]['id']] = $rows[$i]['centro'];
+
 				}
 
-				return self::$list;
-
-			} else {
-
-				SESSION::error("ERROR: No existe centros en tb_centros ");
-
+				return $tab;
 			}
-
 		}
 	}
 
