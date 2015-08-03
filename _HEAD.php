@@ -45,23 +45,19 @@
             <!-- jQuery -->
             <script type="text/javascript" language="javascript" src="_js/jquery.min.js"></script>
             <script type="text/javascript" language="javascript" src="_js/jquery.dataTables.min.js"></script>
+            <!--
             <link rel="stylesheet" type="text/css" href="_css/jquery.dataTables.min.css">
+            -->
 
             <!-- ITman -->
             <script type="text/javascript" language="javascript" src="_js/_.js"></script>
-            <script type="text/javascript" language="javascript" src="_js/_menu.js"></script>
             <link rel="stylesheet" type="text/css" href="./_css/_.css" />
 
             <script type="text/javascript" language="javascript" class="init">
                 var globs = {};
                 globs.kn = "'.$_GET["ch"].'";
 
-                $(document).ready(function(){
-                    $$.kerbero();
-                    $$.menu();
-                    $$.start();
-                    M.start();
-                });
+                $(document).ready(function(){$$.start();});
             </script>
 
         </HEAD>

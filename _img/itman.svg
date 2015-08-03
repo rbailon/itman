@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="Nuevo documento 1">
+   sodipodi:docname="itman.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -59,7 +59,7 @@
        x="182.9897"
        y="2.4933033"
        ry="8"
-       inkscape:export-filename="/home/kaifer/text3085.png"
+       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/favicon.png"
        inkscape:export-xdpi="8.25"
        inkscape:export-ydpi="8.25" />
     <path
@@ -70,23 +70,24 @@
     <path
        inkscape:connector-curvature="0"
        id="path3091"
-       d="m 185.8237,5.3273064 0,84.4159946 84.416,-84.4159946 -84.416,0 z m 168.832,0 -168.832,168.8319936 84.416,0 84.416,-84.415999 0,-84.4159946 z"
-       style="opacity:0.76279991;fill:#666666;fill-opacity:1;stroke:none"
-       inkscape:export-filename="/home/kaifer/text3085.png"
+       d="m 185.8237,5.3273065 0,84.4159945 84.416,-84.4159945 -84.416,0 z m 168.832,0 -168.832,168.8319935 84.416,0 84.416,-84.415999 0,-84.4159945 z"
+       style="opacity:0.21040027;fill:#666666;fill-opacity:1;stroke:none"
+       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/favicon.png"
        inkscape:export-xdpi="8.25"
        inkscape:export-ydpi="8.25" />
     <text
        xml:space="preserve"
-       style="font-size:141.17453003px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-       x="199.16991"
-       y="141.20169"
+       style="font-size:109.09741974px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="215.3181"
+       y="129.50952"
        id="text3085"
        sodipodi:linespacing="125%"
        inkscape:export-xdpi="8.25"
-       inkscape:export-ydpi="8.25"><tspan
+       inkscape:export-ydpi="8.25"
+       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/favicon.png"><tspan
          sodipodi:role="line"
          id="tspan3087"
-         x="199.16991"
-         y="141.20169">IT</tspan></text>
+         x="215.3181"
+         y="129.50952">IT</tspan></text>
   </g>
 </svg>
