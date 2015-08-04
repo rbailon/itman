@@ -1,0 +1,50 @@
+
+div.dataTables_filter {
+	text-align: right;
+}
+table.dataTable {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	width: 100%;
+	margin: 0px auto;
+	/*clear: both;*/
+	/*border-collapse: separate;*/
+	letter-spacing: 1px;
+}
+
+table.dataTable, table.dataTable th, table.dataTable td {
+	 box-sizing: content-box;
+}
+table.dataTable thead {}
+table.dataTable thead>tr {}
+table.dataTable thead>tr>th {
+	padding: 7px 4px;
+}
+table.dataTable thead>tr>th.sorting {}
+table.dataTable thead>tr>th.sorting_asc {}
+table.dataTable thead>tr>th.sorting_desc {}
+table.dataTable tbody>tr {
+	background-color: rgba(255, 255, 255, 1);
+
+	border: 1px solid red;
+	border-spacing: 1px 3px;
+}
+table.dataTable tbody>tr>td {
+	padding: 7px 4px;
+}
+
+div.dataTables_info { color: green;} /*>Mostrando 1 a 20 de 215 registros*/
+div.dataTables_paginate {
+	display: block;
+	text-align: right;
+}
+div.paging_simple_numbers {
+	border: 1px solid;
+}
+div.dataTables_paginate>a {padding: 10px;}
+div.dataTables_paginate>a.paginate_button {cursor: pointer;}
+div.dataTables_paginate>a.previous {}
+div.dataTables_paginate>a.disabled {}
+div.dataTables_paginate>a.current {}
+div.dataTables_paginate>a.ellipsis {}/* … */
+div.dataTables_paginate>a.next {}
