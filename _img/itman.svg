@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="213.5821"
-     inkscape:cy="980.36983"
+     inkscape:zoom="4"
+     inkscape:cx="49.332587"
+     inkscape:cy="845.95777"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1025"
-     inkscape:window-x="0"
+     inkscape:window-width="958"
+     inkscape:window-height="1024"
+     inkscape:window-x="960"
      inkscape:window-y="30"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -59,22 +59,17 @@
        x="182.9897"
        y="2.4933033"
        ry="8"
-       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/favicon.png"
+       inkscape:export-filename="/home/rbailon/html/git-repos/itman/_img/favicon.png"
        inkscape:export-xdpi="8.25"
        inkscape:export-ydpi="8.25" />
     <path
-       style="fill:#666666;fill-opacity:1;stroke:none;opacity:0.06000000000000000"
+       style="fill:#666666;fill-opacity:1;stroke:none;opacity:0.06"
        d="m 1.4989271,1.7924252 0,86.4159948 86.4160029,-86.4159948 -86.4160029,0 z m 172.8320029,0 L 1.4989271,174.62442 l 86.4160029,0 86.416,-86.416 0,-86.4159948 z"
        id="rect3069"
-       inkscape:connector-curvature="0" />
-    <path
        inkscape:connector-curvature="0"
-       id="path3091"
-       d="m 185.8237,5.3273065 0,84.4159945 84.416,-84.4159945 -84.416,0 z m 168.832,0 -168.832,168.8319935 84.416,0 84.416,-84.415999 0,-84.4159945 z"
-       style="opacity:0.21040027;fill:#666666;fill-opacity:1;stroke:none"
-       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/favicon.png"
-       inkscape:export-xdpi="8.25"
-       inkscape:export-ydpi="8.25" />
+       inkscape:export-filename="/home/rbailon/html/git-repos/itman/_img/_fd.png"
+       inkscape:export-xdpi="3.1199999"
+       inkscape:export-ydpi="3.1199999" />
     <text
        xml:space="preserve"
        style="font-size:109.09741974px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -89,5 +84,13 @@
          id="tspan3087"
          x="215.3181"
          y="129.50952">IT</tspan></text>
+    <path
+       style="opacity:0.81999978;fill:#808080;fill-opacity:1;stroke:none"
+       d="m 20.28125,236.375 c -6.26498,0 -11.34375,5.07877 -11.34375,11.34375 0,6.26498 5.07877,11.34375 11.34375,11.34375 6.26498,0 11.34375,-5.07877 11.34375,-11.34375 0,-6.26498 -5.07877,-11.34375 -11.34375,-11.34375 z m -0.71875,6.34375 c 0.23532,-0.0171 0.47713,0 0.71875,0 3.86599,0 7,2.23858 7,5 0,2.76142 -3.13401,5 -7,5 -3.86599,0 -7,-2.23858 -7,-5 0,-2.58883 2.75146,-4.74395 6.28125,-5 z m 0.71875,1.5 c -1.933,0 -3.5,1.567 -3.5,3.5 0,1.933 1.567,3.5 3.5,3.5 1.933,0 3.5,-1.567 3.5,-3.5 0,-1.933 -1.567,-3.5 -3.5,-3.5 z m 0,1.59375 c 1.05279,0 1.90625,0.85346 1.90625,1.90625 0,1.05279 -0.85346,1.90625 -1.90625,1.90625 -1.05279,0 -1.90625,-0.85346 -1.90625,-1.90625 0,-1.05279 0.85346,-1.90625 1.90625,-1.90625 z"
+       id="path3135"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/kaifer/html/git-repos/itman/_img/ic_see.png"
+       inkscape:export-xdpi="63.470001"
+       inkscape:export-ydpi="63.470001" />
   </g>
 </svg>
